@@ -6,34 +6,41 @@
     android:layout_marginRight="100dp"
     android:layout_marginTop="120dp">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:contentDescription="Imagem de perfil"
-        android:src="@mipmap/clientesemfund" />
-
-
     <TextView
-        android:id="@+id/textMessage"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:fontFamily="sans-serif"
-        android:text="Login"
+        android:text="Cadastro"
+        android:layout_marginBottom="20dp"
         android:textAlignment="viewStart"
         android:textSize="30sp" />
 
-    <EditText
-        android:id="@+id/textInput"
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:onClick="clickListener"
+        android:text="FOTO" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:fontFamily="sans-serif"
+        android:text="Digite seu nome completo:"
+        android:textAlignment="viewStart"
+        android:textSize="18sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="text"
         android:textAlignment="center" />
 
     <TextView
-        android:id="@+id/alertaUsrname"
         android:layout_width="match_parent"
         android:layout_height="29dp"
         android:text="Usuário Inválido"
@@ -41,8 +48,15 @@
         android:textColor="#FF0000"
         android:visibility="invisible" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:fontFamily="sans-serif"
+        android:text="Crie sua senha:"
+        android:textAlignment="viewStart"
+        android:textSize="18sp" />
+
     <EditText
-        android:id="@+id/passwordInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -51,7 +65,6 @@
         android:textAlignment="center" />
 
     <TextView
-        android:id="@+id/alertaPassword"
         android:layout_width="match_parent"
         android:layout_height="29dp"
         android:text="Senha Inválida"
@@ -60,31 +73,12 @@
         android:visibility="invisible" />
 
     <Button
-        android:id="@+id/buttonClick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#32CD32"
         android:onClick="clickListener"
-        android:text="Entrar" />
+        android:text="Cadastrar" />
 
 
-    <TextView
-        android:id="@+id/textMessage_conta"
-        android:layout_width="match_parent"
-        android:layout_marginTop="30dp"
-        android:layout_height="50dp"
-        android:fontFamily="sans-serif"
-        android:text="Ainda não possui conta?"
-        android:textAlignment="center"
-        android:textSize="20sp" />
-
-    <Button
-        android:id="@+id/buttonClick_cadastro"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="clickListener"
-        android:backgroundTint="#FF0000	"
-        android:text="Cadastrar-se" />
 
 </LinearLayout>
