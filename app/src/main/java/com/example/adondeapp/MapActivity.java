@@ -13,26 +13,37 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
+
 public class MapActivity extends AppCompatActivity {
 
     private SearchView searchView;
     /*capitão poço LT LG -1.7443707,-47.0646394*/
     private final ArrayList<Place> places = new ArrayList<>();
 
+    private final Switch switcher = new Switch(getSupportFragmentManager());
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_maps);
+        setContentView(R.layout.activity_main);
+
+        switcher.changeFragment(new MapsFragment());
+
+
+    }
+
+    public void AddPonteiro(){
 
         searchView = findViewById(R.id.searchView);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView);
 
         if (mapFragment != null) {
-            mapFragment.getMapAsync(googleMap -> addMarker(googleMap));
+            mapFragment.getMapAsync(this::addMarker);
         }
 
         // Adiciona um exemplo de local
         places.add(new Place("Google", new LatLng(-1.7443707, -47.0646394), "Capitão Poço", 4.8f));
+
+
     }
 
     private void addMarker(GoogleMap googleMap) {
@@ -43,6 +54,7 @@ public class MapActivity extends AppCompatActivity {
             .position(place.getLatLng()));
     }
     }
+
 }
 
 class Place {
@@ -73,4 +85,6 @@ class Place {
     public float getRating() {
         return rating;
     }
+
+
 }

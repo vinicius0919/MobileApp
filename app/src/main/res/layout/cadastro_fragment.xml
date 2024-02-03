@@ -4,16 +4,17 @@
     android:orientation="vertical"
     android:layout_marginLeft="75dp"
     android:layout_marginRight="100dp"
-    android:layout_marginTop="120dp">
+    android:layout_marginTop="30dp">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:fontFamily="sans-serif"
-        android:text="Cadastro"
+        android:text="Cadastro de usuário"
+        android:textStyle="bold"
         android:layout_marginBottom="20dp"
-        android:textAlignment="viewStart"
-        android:textSize="30sp" />
+        android:textAlignment="center"
+        android:textSize="28sp" />
 
     <Button
         android:layout_width="match_parent"
@@ -23,22 +24,14 @@
         android:onClick="clickListener"
         android:text="FOTO" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:fontFamily="sans-serif"
-        android:text="Digite seu nome completo:"
-        android:textAlignment="viewStart"
-        android:textSize="18sp" />
-
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint="Username"
+        android:hint="Digite seu nome completo"
         android:inputType="text"
-        android:textAlignment="center" />
+        android:textAlignment="textStart" />
 
     <TextView
         android:layout_width="match_parent"
@@ -48,21 +41,13 @@
         android:textColor="#FF0000"
         android:visibility="invisible" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:fontFamily="sans-serif"
-        android:text="Crie sua senha:"
-        android:textAlignment="viewStart"
-        android:textSize="18sp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPassword"
-        android:textAlignment="center" />
+        android:inputType="textPassword" />
 
     <TextView
         android:layout_width="match_parent"
@@ -71,6 +56,44 @@
         android:textAlignment="center"
         android:textColor="#FF0000"
         android:visibility="invisible" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="CEP"
+        android:layout_marginBottom="10dp"
+        android:inputType="number" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Pais"
+        android:inputType="text"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="textStart" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Estado"
+        android:inputType="text"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="textStart" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Cidade"
+        android:inputType="text"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="textStart" />
 
     <Button
         android:layout_width="match_parent"
