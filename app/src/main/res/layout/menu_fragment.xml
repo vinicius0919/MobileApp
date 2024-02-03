@@ -92,48 +92,48 @@
 
             <ImageButton
                 android:id="@+id/imageButton4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="56dp"
+                android:layout_height="64dp"
                 android:backgroundTintMode="screen"
-                android:contentDescription="Cadastrar Produtos"
-                android:src="@mipmap/estabelecimento2"
-                />
+                android:contentDescription="Cadastrar usuario"
+                android:src="@mipmap/cadastrar_usuario" />
 
             <TextView
                 android:id="@+id/pesquisarProduto4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="20sp"
                 android:text="Cadastrar usuário"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="20sp" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/opcao5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:backgroundTint="@color/black">
+            android:backgroundTint="@color/black"
+            android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/imageButton5"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:backgroundTintMode="screen"
-                android:contentDescription="Cadastrar Produtos"
-                android:src="@mipmap/estabelecimento2"
-                />
+                android:contentDescription="login"
+                android:src="@mipmap/login" />
 
             <TextView
                 android:id="@+id/pesquisarProduto5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="20sp"
                 android:text="Login"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="20sp" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/opcao6"
             android:layout_width="match_parent"
@@ -148,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTintMode="screen"
                 android:contentDescription="@string/cadastrar_produtos"
-                android:src="@mipmap/estabelecimento2"
+                android:src="@mipmap/meu2"
                 />
 
             <TextView
@@ -174,8 +174,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTintMode="screen"
                 android:contentDescription="Cadastrar Produtos"
-                android:src="@mipmap/estabelecimento2"
-                />
+                android:src="@mipmap/meu1" />
 
             <TextView
                 android:id="@+id/pesquisarProduto7"

@@ -16,21 +16,22 @@
     <TextView
         android:id="@+id/textMessage"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:fontFamily="sans-serif"
+        android:textStyle="bold"
         android:text="Login"
         android:textAlignment="viewStart"
-        android:textSize="30sp" />
+        android:textSize="28sp" />
 
     <EditText
         android:id="@+id/textInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="text"
-        android:textAlignment="center" />
+        android:textAlignment="textStart" />
 
     <TextView
         android:id="@+id/alertaUsrname"
@@ -48,7 +49,7 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textAlignment="center" />
+        android:textAlignment="textStart" />
 
     <TextView
         android:id="@+id/alertaPassword"
