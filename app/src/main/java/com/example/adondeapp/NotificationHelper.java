@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.Handler;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
@@ -22,7 +23,7 @@ public class NotificationHelper {
         }
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.drawable.cardapio)
+                .setSmallIcon(R.drawable.logonotifi)
                 .setContentTitle(titulo)
                 .setContentText(texto)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
@@ -42,9 +43,9 @@ public class NotificationHelper {
         notificationManager.notify(1, builder.build());
 
         // Delay de 5 segundos para cancelar a notificação
-        //new Handler().postDelayed(() -> {
-        //    notificationManager.cancel(1);
-        //}, 5000);
+        new Handler().postDelayed(() -> {
+            notificationManager.cancel(1);
+        }, 5000);
     }
 
     private void createNotificationChannel(Context context) {

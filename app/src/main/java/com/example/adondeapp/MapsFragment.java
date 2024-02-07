@@ -1,5 +1,6 @@
 package com.example.adondeapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,17 +17,22 @@ public class MapsFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_maps, container, false);
 
         FloatingActionButton btn = view.findViewById(R.id.floatingActionButton);
-        Switch switcher = new Switch(getActivity().getSupportFragmentManager());
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switcher.changeFragment(new MenuFragment());
+                Intent intent = new Intent(getContext(), MenuActivity.class);
+                startActivity(intent);
             }
         });
 
         return view;
 
+    }
+
+    public void changeToMenuActvity() {
+        Intent intent = new Intent(getContext(), MenuActivity.class);
+        startActivity(intent);
     }
 
 

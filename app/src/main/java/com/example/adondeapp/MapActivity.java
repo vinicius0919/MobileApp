@@ -31,6 +31,13 @@ public class MapActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        finish();
+        switcher.changeFragment(new MapsFragment());
+    }
+
     public void AddPonteiro(){
 
         searchView = findViewById(R.id.searchView);

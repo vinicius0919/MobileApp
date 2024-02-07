@@ -1,18 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textAlignment="center"
     tools:context=".LoginActivity"
-    android:background="@drawable/background2">
+    android:background="@color/white">
 
 
-    <FrameLayout
-        android:id="@+id/fragment_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/minhafotodeperfil"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:contentDescription="Imagem de perfil"
+            android:src="@mipmap/clientesemfund" />
+
+
+        <TextView
+            android:id="@+id/textMessage"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:fontFamily="sans-serif"
+            android:text="Login"
+            android:textAlignment="viewStart"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/textInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Username"
+            android:inputType="text"
+            android:textAlignment="textStart" />
+
+        <TextView
+            android:id="@+id/alertaUsrname"
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:text="Usuário Inválido"
+            android:textAlignment="center"
+            android:textColor="#FF0000"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/passwordInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textAlignment="textStart" />
+
+        <TextView
+            android:id="@+id/alertaPassword"
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:text="Senha Inválida"
+            android:textAlignment="center"
+            android:textColor="#FF0000"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/logar01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#32CD32"
+            android:text="Entrar" />
+
+
+        <TextView
+            android:id="@+id/textMessage_conta"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="sans-serif"
+            android:text="Ainda não possui conta?"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/buttonClick_cadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#FF0000	"
+            android:onClick="switchCadastro"
+            android:text="Cadastrar-se" />
+        <Button
+            android:id="@+id/voltarMenu"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#AFAFAF"
+            android:clickable="false"
+            android:visibility="invisible"
+            android:text="Voltar" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

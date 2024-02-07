@@ -21,11 +21,9 @@ public class StartFragment extends Fragment {
 
         Context context = requireContext();
         String username =  PreferencesManager.getUsername(context);
-        if(username != null){
-            tv.setText("Bem-vindo, "+ username);
-        }else{
-            tv.setText("Bem-vindo");
-        }
+
+        tv.setText("Bem-vindo");
+
 
 
         return view;

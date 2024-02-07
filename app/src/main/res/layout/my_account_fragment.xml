@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white"
+>
+
+    <ImageView
+        android:id="@+id/minhafotoconta"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:contentDescription="Imagem de perfil"
+        android:src="@mipmap/clientesemfund" />
+
+
+    <TextView
+        android:id="@+id/textMessage"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:fontFamily="sans-serif"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:text="Login"
+        android:textSize="28sp" />
+
+    <EditText
+        android:id="@+id/minhacontaemail"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:layout_gravity="center"
+        android:hint="Username"
+        android:clickable="false"
+        android:inputType="text" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:layout_gravity="center"
+        android:hint="Password"
+        android:clickable="false"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/buttonvoltarconta"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#8A252222"
+        android:textSize="20sp"
+        android:text="Voltar" />
+
+
+
+</LinearLayout>

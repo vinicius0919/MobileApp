@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int NOTIFICATION_PERMISSION_CODE = 123;
     private Context context = this;
-    Switch switcher = new Switch(getSupportFragmentManager());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
     public void changeFragment(Fragment fragment) {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
@@ -69,12 +69,28 @@ public class MainActivity extends AppCompatActivity {
                 // Explique ao usuário que a funcionalidade de notificação pode ser limitada sem a permissão
             }
         }
+
+        if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED || checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                == PackageManager.PERMISSION_DENIED) {
+            String[] permission = {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+            requestPermissions(permission, 112);
+        }
     }
 
+    public void changeActivity(View view){
+        if(PreferencesManager.getUsername(context)!=null){
+         changeToMenuActvity();
+        }else {
+            changeToLoginActvity();
+        }
+    }
 
-
-    public void changeToMapsActvity(View view) {
-        Intent intent = new Intent(this, MapActivity.class);
+    public void changeToLoginActvity() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+    public void changeToMenuActvity() {
+        Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
     }
 
