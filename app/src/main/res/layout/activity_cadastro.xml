@@ -41,6 +41,7 @@
                 android:background="@mipmap/camicon" />
 
             <EditText
+                android:id="@+id/editTextEmailCadastro"
                 android:layout_width="300dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
@@ -61,6 +62,7 @@
 
 
             <EditText
+                android:id="@+id/editTextSenhaCadastro"
                 android:layout_width="300dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
@@ -79,6 +81,7 @@
 
 
             <Button
+                android:id="@+id/buttonCadastrar"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

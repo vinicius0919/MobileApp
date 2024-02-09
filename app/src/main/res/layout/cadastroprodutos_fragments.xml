@@ -1,75 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="center"
+    tools:context=".MapActivity"
+    tools:ignore="MissingDefaultResource"
+    android:id="@+id/menutela">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="250dp"
-android:layout_height="wrap_content"
-android:orientation="vertical"
-android:layout_marginLeft="75dp"
-android:layout_marginRight="100dp"
-android:layout_marginTop="120dp">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:contentDescription="Imagem de perfil"
-        android:src="@mipmap/produto" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="sans-serif"
-        android:text="Cadastro de produtos"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:textSize="28sp" />
-
-    <EditText
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="Nome do produto"
-        android:inputType="text" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Marca"
-        android:layout_marginTop="25dp"
-        android:inputType="text"/>
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Preço:"
-        android:layout_marginTop="25dp"
-        android:inputType="number"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:contentDescription="Imagem de perfil"
+                android:src="@mipmap/produto" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Descrição"
-        android:layout_marginTop="25dp"
-        android:inputType="text"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="sans-serif"
+                android:text="Cadastro de produtos"
+                android:textAlignment="center"
+                android:textSize="28sp"
+                android:textStyle="bold" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#32CD32"
-        android:layout_marginTop="25dp"
-        android:text="Cadastrar" />
+            <ImageView
+                android:id="@+id/viewProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/camicon" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#8A252222"
-        android:layout_marginTop="5dp"
-        android:text="Voltar" />
+            <EditText
+                android:id="@+id/nomeproduto"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Nome do produto"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/marcaproduto"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:ems="10"
+                android:hint="Marca"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/precoproduto"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:ems="10"
+                android:hint="Preço:"
+                android:inputType="number" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:ems="10"
+                android:hint="Descrição"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/cadastrarproduto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="#32CD32"
+                android:text="Cadastrar" />
+
+            <Button
+                android:id="@+id/retornarprodutomenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#8A252222"
+                android:onClick="switchMenu"
+                android:text="Voltar" />
 
 
+        </LinearLayout>
 
-</LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
