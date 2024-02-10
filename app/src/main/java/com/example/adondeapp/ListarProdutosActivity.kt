@@ -13,7 +13,7 @@ import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 
-class ListarProdutosActivity : AppCompatActivity() {
+class ListarProdutosActivity : AppCompatActivity(), ProductActionListener {
     private lateinit var recyclerView: RecyclerView
     private lateinit var produtosAdapter: ProdutosAdapter
     private var auth = FirebaseAuth.getInstance()
@@ -26,14 +26,14 @@ class ListarProdutosActivity : AppCompatActivity() {
 
 
         recyclerView = findViewById(R.id.recyclerView)
-        produtosAdapter = ProdutosAdapter()
 
         recyclerView.layoutManager = LinearLayoutManager(this)
+        produtosAdapter = ProdutosAdapter(this)
         recyclerView.adapter = produtosAdapter
 
 
-
         val listarProdButton: Button = findViewById(R.id.listarProdutos)
+
         listarProdButton.setOnClickListener {
             if(parametro){
                 getAllProducts()
@@ -58,13 +58,14 @@ class ListarProdutosActivity : AppCompatActivity() {
                 // Itera sobre os documentos da coleção
                 for (document: DocumentSnapshot in querySnapshot!!.documents) {
                     // Obtém os dados do documento e adiciona à lista de produtos
+                    val idProduct = document.id
                     val nome = document.getString("NOME")
                     val preco = document.getString("PRECO")
                     val descricao = document.getString("DESCRICAO")
                     val fotoproduto = document.getString("FOTOPRODUTO")
 
                     if (nome != null && preco != null && descricao != null) {
-                        val produto = Produto(nome, preco, descricao, fotoproduto)
+                        val produto = Produto(idProduct, nome, preco, descricao, fotoproduto)
                         produtosList.add(produto)
                     }
                 }
@@ -81,7 +82,7 @@ class ListarProdutosActivity : AppCompatActivity() {
             }
     }
 
-    fun getAllProducts(){
+    override fun getAllProducts(){
         val db = FirebaseFirestore.getInstance()
 
         // Realiza a leitura dos dados da coleção "PRODUTOS"
@@ -93,13 +94,14 @@ class ListarProdutosActivity : AppCompatActivity() {
                 // Itera sobre os documentos da coleção
                 for (document: DocumentSnapshot in querySnapshot!!.documents) {
                     // Obtém os dados do documento e adiciona à lista de produtos
+                    val idProduct = document.id
                     val nome = document.getString("NOME")
                     val preco = document.getString("PRECO")
                     val descricao = document.getString("DESCRICAO")
                     val fotoproduto = document.getString("FOTOPRODUTO")
 
                     if (nome != null && preco != null && descricao != null) {
-                        val produto = Produto(nome, preco, descricao, fotoproduto)
+                        val produto = Produto(idProduct, nome, preco, descricao, fotoproduto)
                         produtosList.add(produto)
                     }
                 }
@@ -115,9 +117,17 @@ class ListarProdutosActivity : AppCompatActivity() {
                 ).show()
             }
     }
-
+    override fun onResume() {
+        super.onResume()
+        // Atualiza o RecyclerView quando a atividade é retomada
+        produtosAdapter.notifyDataSetChanged()
+    }
     fun switchLogin(view: View?) {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
     }
+
+}
+interface ProductActionListener {
+    fun getAllProducts()
 }
