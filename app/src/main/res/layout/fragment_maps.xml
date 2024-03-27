@@ -4,22 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/cardview_light_background"
+        android:iconifiedByDefault="false"
+        android:queryHint="Procurar produto..." />
+
     <fragment
         android:id="@+id/mapView"
         class="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/searchView"
         tools:ignore="FragmentTagUsage" />
 
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="match_parent"
-        android:background="@color/cardview_light_background"
-        android:layout_height="wrap_content"
-        android:iconifiedByDefault="false"
-        android:layout_marginTop="16dp"
-        android:layout_alignParentTop="true"
-        android:queryHint="Procurar produto..." />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
